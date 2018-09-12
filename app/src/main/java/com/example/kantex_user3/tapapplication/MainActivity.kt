@@ -12,14 +12,17 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import android.os.Bundle
 import android.support.design.widget.TabLayout.Tab
+import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import android.widget.TableLayout
 
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -102,7 +105,12 @@ class MainActivity : AppCompatActivity() {
 
             var rootView: View? = null
 
-            rootView = inflater.inflate(R.layout.content_fragment, container, false)
+            rootView = inflater.inflate(R.layout.tab1, container, false)
+
+            var listView = rootView.findViewById<View>(R.id.mlistView) as ListView
+    listView.setOnItemClickListener { parent, view, position, id ->var mydialogbox = AlertDialog.Builder(context!!).setMessage("m")
+    mydialogbox.show()
+    }
 
             return rootView
         }
